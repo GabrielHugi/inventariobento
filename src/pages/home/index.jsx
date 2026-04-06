@@ -6,10 +6,16 @@ function Home() {
   return (
     <div className="Home">
       <header className="Header">
-        <img src={logo} alt="logo" />
+        <div style={{width: "20%", textAlign: "center"}}>
+        <img src={logo} alt="logo" className="Logo" />
+        </div>
+        <div style={{width: "60%", textAlign: "center"}}>
         <h1>
           Inventario Bento Quirino
         </h1>
+        </div>
+        <div style={{width: "20%"}}>
+        </div>
       </header>
     </div>
   );
