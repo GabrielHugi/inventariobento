@@ -2,17 +2,13 @@
   text-align: center;
 }
   
-.Body {
-  min-height: 100vh;
-}
-
 .Header img {
   height: 20vmin;
   pointer-events: none;
 }
   
 .Header {
-  background-color: #282c34;
+  background-color: #8ea4cf;
   height: 20vh;
   display: flex;
   flex-direction: row;
@@ -20,6 +16,20 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Header img {
+  height: 18vmin;
+  pointer-events: none;
+}
+
+.Header h1 {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+
+.Logo {
+  
 }
   
 .Footer {
