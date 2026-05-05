@@ -7,18 +7,18 @@
 }
 
 .Header img {
-  height: 20vmin;
+  height: 15vmin;
   pointer-events: none;
 }
   
 .Header {
-  background-color: #282c34;
-  height: 20vh;
+  background-color: #81b3f4;
+  height: 16vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
   
