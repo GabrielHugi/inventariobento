@@ -6,13 +6,16 @@ function MainHeader() {
   return (
     <>
       <header className="Header">
-        <div style={{ width: "20%", textAlign: "center" }}>
+        <div style={{ width: "18%", textAlign: "center" }}>
           <img src={logo} alt="logo" className="Logo" />
         </div>
-        <div style={{ width: "60%", textAlign: "center" }}>
-          <h1>Inventario Bento Quirino</h1>
+        <div style={{ width: "82%" }}>
+          <div className="Tabs">
+            <div>
+              <p>Produtos</p>
+            </div>
+          </div>
         </div>
-        <div style={{ width: "20%" }}></div>
       </header>
     </>
   );
