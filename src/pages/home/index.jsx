@@ -1,19 +1,62 @@
-import logo from "../../images/logo.png";
+import React, { useState } from "react";
+import user from "../../images/user.png";
 import "./index.css";
 import "../shared/index.css";
 import MainHeader from "../shared/MainHeader/index.jsx"
 import MainFooter from "../shared/MainFooter/index.jsx";
 
-function Home() {
+function Login() {
+  const [mostrarSenha, setMostrarSenha] = useState(false);
+
+  const emailUsuario = "usuario@email.com";
+  const senhaUsuario = "senha123456";
+
   return (
-    <div className="Home">
+    <div className="Login">
       <MainHeader/>
+      
       <div className="Body">
-        <h1>Ayo my sigmas!</h1>
+        <div className="caixalogin">
+          
+          <div className="lado-esquerdo">
+            <h1 className="titulo-estoque">Perfil</h1>
+            <img src={user} alt="Foto de perfil" className="logo-bento" />
+          </div>
+
+          <form className="lado-direito" onSubmit={(e) => e.preventDefault()}>
+            <div className="campo-input">
+              <label>Email:</label>
+              <input type="email" value={emailUsuario} readOnly />
+            </div>
+
+            <div className="campo-input">
+              <label>Senha:</label>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <input 
+                  type={mostrarSenha ? "text" : "password"} 
+                  value={senhaUsuario} 
+                  readOnly 
+                />
+                <button 
+                  type="button" 
+                  onClick={() => setMostrarSenha(!mostrarSenha)}
+                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2rem' }}
+                  title={mostrarSenha ? "Ocultar senha" : "Mostrar senha"}
+                >
+                  {mostrarSenha ? "🙈" : "👁️"}
+                </button>
+              </div>
+            </div>
+
+            <button type="button" className="botao-enviar">Voltar</button>
+          </form>
+
+        </div>
       </div>
+      
       <MainFooter/>
     </div>
   );
 }
 
-export default Home;
+export default Login;
