@@ -12,11 +12,19 @@ function MainHeader() {
         <div className="LogoDiv" onClick={() => navigate("/")}>
           <img src={logo} alt="logo" className="Logo" />
         </div>
-        <div style={{ width: "75%", marginLeft: "5%" }}>
+        <div style={{ width: "60%", marginLeft: "5%" }}>
           <div className="Tabs">
-            <div className="Button" onClick={() => navigate("/products")}>
+            <button onClick={() => navigate("/products")}>
               <p>Produtos</p>
-            </div>
+            </button>
+          </div>
+        </div>
+        <div style={{ width: "10%", marginLeft: "5%" }}>
+          <div className="Tabs">
+            <button onClick={() => navigate("/products")}>
+              <p>Login</p>
+            </button>
+            <img></img>
           </div>
         </div>
       </header>
