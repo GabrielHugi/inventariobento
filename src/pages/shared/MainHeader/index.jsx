@@ -1,7 +1,9 @@
 import logo from "../../../images/logo.png";
+import defaultProfile from "../../../images/profile.png";
 import "./index.css";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
+import { Profiler } from "react";
 
 function MainHeader() {
   const navigate = useNavigate();
@@ -19,13 +21,11 @@ function MainHeader() {
             </button>
           </div>
         </div>
-        <div style={{ width: "10%", marginLeft: "5%" }}>
-          <div className="Tabs">
-            <button onClick={() => navigate("/products")}>
-              <p>Login</p>
-            </button>
-            <img></img>
-          </div>
+        <div style={{ width: "10%", marginLeft: "5%", height: "100%", display: "inline-flex", display: "flex", alignItems: "center" }}>
+          <button onClick={() => navigate("/products")}>
+            <p>Login</p>
+          </button>
+          <img src={defaultProfile} alt="logo" className="Profile"></img>
         </div>
       </header>
     </>
