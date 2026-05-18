@@ -1,62 +1,117 @@
-import React, { useState } from "react";
-import user from "../../images/user.png";
 import "./index.css";
 import "../shared/index.css";
-import MainHeader from "../shared/MainHeader/index.jsx"
-import MainFooter from "../shared/MainFooter/index.jsx";
+import MainHeader from "../shared/MainHeader";
+import MainFooter from "../shared/MainFooter";
 
-function Login() {
-  const [mostrarSenha, setMostrarSenha] = useState(false);
+function Home() {
+  const news = [
+    {
+      title: "Nova atualização disponível",
+      text: "Confira as novas funcionalidades adicionadas ao sistema.",
+    },
+    {
+      title: "Produtos em destaque",
+      text: "Veja os itens mais procurados desta semana.",
+    },
+    {
+      title: "Evento da comunidade",
+      text: "Participe do evento online neste final de semana.",
+    },
+  ];
 
-  const emailUsuario = "usuario@email.com";
-  const senhaUsuario = "senha123456";
+  const tutorials = [
+    {
+      title: "Como pesquisar produtos",
+      text: "Aprenda a usar os filtros e ferramentas de pesquisa.",
+    },
+    {
+      title: "Criando uma conta",
+      text: "Passo a passo para configurar seu perfil.",
+    },
+    {
+      title: "Salvando favoritos",
+      text: "Organize os produtos que deseja acompanhar.",
+    },
+  ];
+
+  const products = [
+    { name: "Produto X", description: "Descrição rápida do produto." },
+    { name: "Produto Y", description: "Descrição rápida do produto." },
+    { name: "Produto Z", description: "Descrição rápida do produto." },
+  ];
 
   return (
-    <div className="Login">
-      <MainHeader/>
-      
-      <div className="Body">
-        <div className="caixalogin">
-          
-          <div className="lado-esquerdo">
-            <h1 className="titulo-estoque">Perfil</h1>
-            <img src={user} alt="Foto de perfil" className="logo-bento" />
-          </div>
+    <div className="Home">
+      <MainHeader />
 
-          <form className="lado-direito" onSubmit={(e) => e.preventDefault()}>
-            <div className="campo-input">
-              <label>Email:</label>
-              <input type="email" value={emailUsuario} readOnly />
-            </div>
+      <div className="Body Homepage">
+        <div className="HomeContent">
 
-            <div className="campo-input">
-              <label>Senha:</label>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <input 
-                  type={mostrarSenha ? "text" : "password"} 
-                  value={senhaUsuario} 
-                  readOnly 
-                />
-                <button 
-                  type="button" 
-                  onClick={() => setMostrarSenha(!mostrarSenha)}
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2rem' }}
-                  title={mostrarSenha ? "Ocultar senha" : "Mostrar senha"}
-                >
-                  {mostrarSenha ? "🙈" : "👁️"}
-                </button>
+          <div className="LeftColumn">
+
+            <div className="Box">
+              <div className="BoxHeader">
+                <h2>Notícias</h2>
+              </div>
+
+              <div className="ScrollableContent">
+                {news.map((item, i) => (
+                  <div key={i} className="NewsCard">
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <button type="button" className="botao-enviar">Voltar</button>
-          </form>
+            <div className="Box">
+              <div className="BoxHeader">
+                <h2>Tutoriais</h2>
+              </div>
+
+              <div className="ScrollableContent">
+                {tutorials.map((item, i) => (
+                  <div key={i} className="TutorialCard">
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                    <button>
+                      Abrir tutorial
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="Box ProductsBox">
+            <div className="BoxHeader">
+              <h2>Produtos relevantes</h2>
+            </div>
+
+            <div className="ScrollableContent">
+              {products.map((prod, i) => (
+                <div key={i} className="ProductCard">
+                  <div className="ProductImage" />
+
+                  <div className="ProductInfo">
+                    <strong>{prod.name}</strong>
+                    <p>{prod.description}</p>
+                  </div>
+
+                  <button>
+                    Mais informações
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
 
         </div>
       </div>
-      
-      <MainFooter/>
+
+      <MainFooter />
     </div>
   );
 }
 
-export default Login;
+export default Home;

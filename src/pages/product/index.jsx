@@ -20,36 +20,38 @@ function Products() {
   return (
     <div className="Products">
       <MainHeader />
-      <div className="Body ProductsContent">
-        {/* Left column */}
-        <div className="Box RecentProducts">
-          <h2>Produtos recém-adicionados</h2>
-          {recentProducts.map((prod, i) => (
-            <div key={i} className="ProductCard">
-              <div className="ProductImage" />
-              <div className="ProductInfo">
-                <strong>{prod.name}</strong>
-                <p>{prod.description}</p>
+      <div className="Body">
+        <div className="ProductsContent">
+          {/* Left column */}
+          <div className="Box RecentProducts">
+            <h2>Produtos recém-adicionados</h2>
+            {recentProducts.map((prod, i) => (
+              <div key={i} className="ProductCard">
+                <div className="ProductImage" />
+                <div className="ProductInfo">
+                  <strong>{prod.name}</strong>
+                  <p>{prod.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Right column */}
-        <div className="Box SearchBox">
-          <h2>Pesquisa</h2>
-          <input type="text" placeholder="Insira algo" className="SearchInput" />
-          <h3>Resultados:</h3>
-          {searchResults.map((prod, i) => (
-            <div key={i} className="ProductCard SearchResult">
-              <div className="ProductImage" />
-              <div className="ProductInfo">
-                <strong>{prod.name}</strong>
-                <p>{prod.description}</p>
+          {/* Right column */}
+          <div className="Box SearchBox">
+            <h2>Pesquisa</h2>
+            <input type="text" placeholder="Insira algo" className="SearchInput" />
+            <h3>Resultados:</h3>
+            {searchResults.map((prod, i) => (
+              <div key={i} className="ProductCard SearchResult">
+                <div className="ProductImage" />
+                <div className="ProductInfo">
+                  <strong>{prod.name}</strong>
+                  <p>{prod.description}</p>
+                </div>
+                <button className="InfoButton">Mais informações</button>
               </div>
-              <button className="InfoButton">Mais informações</button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
       <MainFooter />

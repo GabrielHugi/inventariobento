@@ -32,5 +32,18 @@
 }
 
 .Profile {
+    margin-left: 10px;
     height: 50%;
+}
+
+.Profile:hover {
+    cursor: pointer;
+    animation: profile 1.2s ease;
+}
+
+@keyframes profile {
+    0%   { transform: rotate(0deg) scale(1); }
+    25%  { transform: rotate(-10deg) scale(1.05); }
+    50%  { transform: rotate(10deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
 }
