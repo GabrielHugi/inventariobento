@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+
+# standalone node for shitty ass pcs in my school
+# run with "C:\Users\20240192\inventariobento\node\npm"
+/node
 /.pnp
 .pnp.js
 
