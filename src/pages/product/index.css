@@ -1,67 +1,195 @@
-/* Layout container */
-.ProductsContent {
-    display: inline-flex;
-    justify-content: center;
-    align-items: stretch;
-    padding: 20px;
-    gap: 20px;
-    height: 70vh;
-  }
-  
-  /* Boxes */
-  .Box {
-    border: 1px solid #000;
-    padding: 15px;
-    flex: 1;
-    width: 44vw;
-    box-sizing: border-box;
-    display: flex;
+.ProductsPage {
+  min-height: 100vh;
+  background: #efefe9;
+}
+
+.ProductPageContainer {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.LeftSection {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.MainImage {
+  width: 100%;
+  height: 320px;
+  background: #d9d9d9;
+  border: 1px solid #bcbcbc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImagePlaceholder {
+  font-size: 90px;
+  color: #6f7b89;
+}
+
+.ReportButton {
+  width: 170px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 16px;
+  background: #cfd9e6;
+  font-size: 28px;
+  text-align: left;
+  cursor: pointer;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.CenterSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ProductTitle {
+  font-size: 72px;
+  margin: 0 0 18px 0;
+  font-weight: 400;
+}
+
+.TopInfo,
+.BottomInfo {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.InfoBox {
+  background: #d7e1ee;
+  border: 1px solid #444;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.InfoBox h3 {
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.InfoBox p {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.DescriptionBox {
+  flex: 2;
+  min-height: 240px;
+}
+
+.ConditionBox {
+  width: 220px;
+}
+
+.PhotosBox {
+  flex: 2;
+}
+
+.ExtraPhotosGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+.SmallPhoto {
+  background: #edf1f5;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  border: 1px solid #c8ced6;
+}
+
+.LocationBox {
+  width: 220px;
+}
+
+.RightSection {
+  width: 300px;
+  border-left: 1px solid #777;
+  padding-left: 20px;
+}
+
+.RelatedTitle {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.RelatedCard {
+  display: flex;
+  gap: 12px;
+  border: 1px solid #444;
+  background: #f4f1e8;
+  padding: 10px;
+  margin-bottom: 14px;
+}
+
+.RelatedImage {
+  width: 60px;
+  height: 60px;
+  background: #d9d9d9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+  font-size: 30px;
+}
+
+.RelatedInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.RelatedInfo strong {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.RelatedInfo p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .ProductPageContainer {
     flex-direction: column;
-    gap: 10px;
-    height: 100%;
-    max-height: 100%; min-height: 100%;
-    margin-left: 10px; margin-right: 10px;
-    overflow-y: auto;
-  }
-  
-  /* Product card */
-  .ProductCard {
-    display: flex;
-    border: 1px solid #ccc;
-    padding: 8px;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  .ProductImage {
-    width: 50px;
-    height: 50px;
-    background-color: #ddd;
-    flex-shrink: 0;
-  }
-  
-  .ProductInfo {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Search box */
-  .SearchBox .SearchInput {
-    padding: 5px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  
-  .InfoButton {
-    min-height: 50%;
-    white-space: normal;
-    word-break: break-word;
-    text-align: center;
-    line-height: 1;
-    margin-left: auto;
-    padding: 4px 8px;
-    font-size: 12px;
-    cursor: pointer;
   }
 
-  
+  .RightSection {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .TopInfo,
+  .BottomInfo {
+    flex-direction: column;
+  }
+
+  .ConditionBox,
+  .LocationBox {
+    width: 100%;
+  }
+}

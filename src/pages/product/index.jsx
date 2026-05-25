@@ -2,61 +2,141 @@ import "./index.css";
 import "../shared/index.css";
 import MainHeader from "../shared/MainHeader";
 import MainFooter from "../shared/MainFooter";
+import { useParams, useNavigate } from "react-router-dom";
 
-function Products() {
-  const recentProducts = [
-    { name: "Produto 1", description: "Descrição e etc etc etc etc etc etc etc" },
-    { name: "Produto 2", description: "Descrição e etc etc etc etc etc etc etc" },
-    { name: "Produto 3", description: "Descrição e etc etc etc etc etc etc etc" },
-    { name: "Produto 4", description: "Descrição e etc etc etc etc etc etc etc" },
+function ProductPage() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  // FAKE DATABASE
+  const products = [
+    {
+      id: 1,
+      name: "Cadeira Gamer",
+      description:
+        "Cadeira bem skibidi sigma ohio rizz da marca ultra-super-duper-uper-looper",
+      condition: "Novo, mas tem um pouco de mijo",
+      location:
+        "Sala 2, canto esquerdo, terceira cadeira da direita para a esquerda",
+      images: ["🖼️", "🖼️", "🖼️", "🖼️", "🖼️", "🖼️"],
+    },
+
+    {
+      id: 2,
+      name: "Monitor",
+      description: "Monitor 144hz muito pika",
+      condition: "Usado",
+      location: "Laboratório 3",
+      images: ["🖼️", "🖼️", "🖼️"],
+    },
+
+    {
+      id: 3,
+      name: "Teclado",
+      description: "Teclado mecânico barulhento pra caralho",
+      condition: "Semi novo",
+      location: "Sala 1",
+      images: ["🖼️", "🖼️"],
+    },
   ];
 
-  const searchResults = [
-    { name: "Produto A", description: "Descrição e etc etc etc etc etc etc etc" },
-    { name: "Produto B", description: "Descrição e etc etc etc etc etc etc etc" },
-    { name: "Produto C", description: "Descrição e etc etc etc etc etc etc etc" },
-  ];
+  // GET PRODUCT BY ID
+  const product = products.find((p) => p.id === Number(id));
+
+  // NOT FOUND
+  if (!product) {
+    return (
+      <div>
+        <MainHeader />
+        <h1>Produto não encontrado</h1>
+        <MainFooter />
+      </div>
+    );
+  }
+
+  // RELATED PRODUCTS
+  const relatedProducts = products.filter((p) => p.id !== product.id);
 
   return (
-    <div className="Products">
+    <div className="ProductsPage">
       <MainHeader />
-      <div className="Body">
-        <div className="ProductsContent">
-          {/* Left column */}
-          <div className="Box RecentProducts">
-            <h2>Produtos recém-adicionados</h2>
-            {recentProducts.map((prod, i) => (
-              <div key={i} className="ProductCard">
-                <div className="ProductImage" />
-                <div className="ProductInfo">
-                  <strong>{prod.name}</strong>
-                  <p>{prod.description}</p>
-                </div>
-              </div>
-            ))}
+
+      <div className="ProductPageContainer">
+        {/* LEFT SIDE */}
+        <div className="LeftSection">
+          <div className="MainImage">
+            <div className="ImagePlaceholder">🖼️</div>
           </div>
 
-          {/* Right column */}
-          <div className="Box SearchBox">
-            <h2>Pesquisa</h2>
-            <input type="text" placeholder="Insira algo" className="SearchInput" />
-            <h3>Resultados:</h3>
-            {searchResults.map((prod, i) => (
-              <div key={i} className="ProductCard SearchResult">
-                <div className="ProductImage" />
-                <div className="ProductInfo">
-                  <strong>{prod.name}</strong>
-                  <p>{prod.description}</p>
-                </div>
-                <button className="InfoButton">Mais informações</button>
+          <button className="ReportButton">
+            Reporte mudança
+            <br />
+            ou problema
+          </button>
+        </div>
+
+        {/* CENTER */}
+        <div className="CenterSection">
+          <h1 className="ProductTitle">{product.name}</h1>
+
+          <div className="TopInfo">
+            <div className="InfoBox DescriptionBox">
+              <h3>Descrição</h3>
+              <p>{product.description}</p>
+            </div>
+
+            <div className="InfoBox ConditionBox">
+              <h3>Condição</h3>
+              <p>{product.condition}</p>
+            </div>
+          </div>
+
+          <div className="BottomInfo">
+            <div className="InfoBox PhotosBox">
+              <h3>Fotos adicionais</h3>
+
+              <div className="ExtraPhotosGrid">
+                {product.images.map((img, index) => (
+                  <div key={index} className="SmallPhoto">
+                    {img}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="InfoBox LocationBox">
+              <h3>Local</h3>
+
+              <p>{product.location}</p>
+            </div>
           </div>
         </div>
+
+        {/* RIGHT SIDE */}
+        <div className="RightSection">
+          <h2 className="RelatedTitle">Produtos relacionados</h2>
+
+          {relatedProducts.map((related) => (
+            <div
+              className="RelatedCard"
+              key={related.id}
+              onClick={() => navigate(`/product/${related.id}`)}
+              style={{ cursor: "pointer" }}
+            >
+              <div className="RelatedImage">🖼️</div>
+
+              <div className="RelatedInfo">
+                <strong>{related.name}</strong>
+                <p>{related.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
       <MainFooter />
     </div>
   );
 }
 
-export default Products;
+export default ProductPage;
