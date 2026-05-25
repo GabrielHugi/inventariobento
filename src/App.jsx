@@ -5,6 +5,7 @@ import Products from "./pages/products/index.jsx";
 import ProductPage from "./pages/product/index.jsx";
 import Login from "./pages/login/index.jsx";
 import Profile from "./pages/profile/index.jsx";
+import Cadastro from "./pages/cadastro/index.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
     </BrowserRouter>
   );
