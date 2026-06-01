@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import profilePicture from "../../images/profile.png";
 import "./index.css";
 import "../shared/index.css";
-import MainHeader from "../shared/MainHeader/index.jsx"
+import MainHeader from "../shared/MainHeader/index.jsx";
 import MainFooter from "../shared/MainFooter/index.jsx";
 
 function Login() {
@@ -13,14 +13,17 @@ function Login() {
 
   return (
     <div className="Login">
-      <MainHeader/>
-      
+      <MainHeader />
+
       <div className="Body">
         <div className="caixalogin">
-          
           <div className="lado-esquerdo">
             <h1 className="titulo-estoque">Perfil</h1>
-            <img src={profilePicture} alt="Foto de perfil" className="logo-bento" />
+            <img
+              src={profilePicture}
+              alt="Foto de perfil"
+              className="logo-bento"
+            />
           </div>
 
           <form className="lado-direito" onSubmit={(e) => e.preventDefault()}>
@@ -31,28 +34,34 @@ function Login() {
 
             <div className="campo-input">
               <label>Senha:</label>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <input 
-                  type={mostrarSenha ? "text" : "password"} 
-                  value={senhaUsuario} 
-                  readOnly 
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "8px" }}
+              >
+                <input
+                  type={mostrarSenha ? "text" : "password"}
+                  value={senhaUsuario}
+                  readOnly
                 />
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={() => setMostrarSenha(!mostrarSenha)}
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2rem' }}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    fontSize: "1.2rem",
+                  }}
                   title={mostrarSenha ? "Ocultar senha" : "Mostrar senha"}
                 >
-                  {mostrarSenha ? "🙈" : "👁️"}
+                  {mostrarSenha ? "Hide" : "Show"}
                 </button>
               </div>
             </div>
           </form>
-
         </div>
       </div>
-      
-      <MainFooter/>
+
+      <MainFooter />
     </div>
   );
 }
