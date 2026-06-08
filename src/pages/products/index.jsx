@@ -105,7 +105,7 @@ function Products() {
 
                 <button
                   className="InfoButton"
-                  onClick={() => navigate(`/product/${prod.id}`)}
+                  onClick={() => window.open(`/product/${prod.id}`, "_blank", "noopener,noreferrer")}
                 >
                   Mais informações
                 </button>
