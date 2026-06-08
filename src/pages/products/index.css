@@ -64,4 +64,40 @@
     cursor: pointer;
   }
 
-  
+  .SearchFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.FilterBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.FilterBox h4 {
+  width: 100%;
+  margin: 0 0 5px;
+}
+
+.FilterBox select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.FilterBox input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.FilterButton {
+  padding: 2px 4px;
+  cursor: pointer;
+}
