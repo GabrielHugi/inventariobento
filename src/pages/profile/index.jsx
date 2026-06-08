@@ -16,48 +16,46 @@ function Login() {
       <MainHeader />
 
       <div className="Body">
-        <div className="caixalogin">
-          <div className="lado-esquerdo">
-            <h1 className="titulo-estoque">Perfil</h1>
-            <img
-              src={profilePicture}
-              alt="Foto de perfil"
-              className="logo-bento"
-            />
-          </div>
+        <div className="ProfileCard">
+          <img
+            src={profilePicture}
+            alt="Foto de perfil"
+            className="ProfileImage"
+          />
 
-          <form className="lado-direito" onSubmit={(e) => e.preventDefault()}>
-            <div className="campo-input">
-              <label>Email:</label>
+          <h1>Perfil</h1>
+
+          <div className="ProfileInfo">
+            <div className="InfoRow">
+              <span>Email</span>
               <input type="email" value={emailUsuario} readOnly />
             </div>
 
-            <div className="campo-input">
-              <label>Senha:</label>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "8px" }}
-              >
+            <div className="InfoRow">
+              <span>Senha</span>
+
+              <div className="PasswordContainer">
                 <input
                   type={mostrarSenha ? "text" : "password"}
                   value={senhaUsuario}
                   readOnly
                 />
+
                 <button
                   type="button"
+                  className="ShowPasswordButton"
                   onClick={() => setMostrarSenha(!mostrarSenha)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    fontSize: "1.2rem",
-                  }}
-                  title={mostrarSenha ? "Ocultar senha" : "Mostrar senha"}
                 >
-                  {mostrarSenha ? "Hide" : "Show"}
+                  {mostrarSenha ? "Ocultar" : "Mostrar"}
                 </button>
               </div>
             </div>
-          </form>
+          </div>
+
+          <div className="ProfileActions">
+            <button>Editar Perfil</button>
+            <button>Trocar Senha</button>
+          </div>
         </div>
       </div>
 

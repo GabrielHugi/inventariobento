@@ -3,7 +3,8 @@
   min-width: 180px;
 }
 
-.CustomSelectButton {
+.CustomSelectButton,
+.CustomSelectButton:hover {
   width: 100%;
   max-width: none;
 
@@ -21,13 +22,6 @@
 
   background: white;
   color: black;
-
-  cursor: pointer;
-}
-
-.CustomSelectButton:hover {
-  padding: 8px 12px;
-  background: white;
 }
 
 .CustomSelectMenu {

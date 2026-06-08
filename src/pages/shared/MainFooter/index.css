@@ -1,0 +1,42 @@
+.Footer {
+  background-color: #81b3f4;
+  color: white;
+
+  min-height: 20vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.FooterSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.FooterSection h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.FooterSection p {
+  margin: 0;
+  text-align: center;
+}
+
+.FooterBrand {
+  max-width: 250px;
+}
+
+.FooterLogo {
+  height: 80px;
+  align-self: center;
+  width: 140px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}

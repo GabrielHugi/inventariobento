@@ -5,17 +5,7 @@
 .Body {
   min-height: 100vh;
 }
-  
-.Footer {
-  background-color: grey;
-  height: 20vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 .App-link {
   color: #61dafb;
 }
@@ -27,7 +17,7 @@ button {
   border-radius: 4px;
   background-color: #ffffff0c;
   border-width: 1px;
-  line-height: 0;
+  line-height: 1.5;
   padding: 2px 6px; 
   border-color: black;
   border-style: solid;
@@ -36,9 +26,6 @@ button {
 }
 
 button:hover {
-  border-radius: 4px;
-  background-color: #ffffff0c;
-  max-width: fit-content;
   padding: 2px 10px;
   transition: all 0.3s ease;
   cursor: pointer;
